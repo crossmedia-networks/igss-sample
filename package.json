@@ -18,9 +18,11 @@
   },
   "homepage": "https://github.com/crossmedia-networks/igss-sample#readme",
   "dependencies": {
+    "chart.js": "^3.5.1",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
     "heroku": "^7.59.0",
-    "node": "^16.10.0"
+    "node": "^16.10.0",
+    "request": "^2.88.2"
   }
 }

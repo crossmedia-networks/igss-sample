@@ -1,3 +1,17 @@
-<h1>IGSS SAMPLE</h1>
-
-
+<html>
+  <head>
+    <title>IGSS SAMPLE</title>
+  </head>
+  <body>
+    <h1>IGSS SAMPLE</h1>
+    <h2>気象データ表示</h2>
+    <form method="POST" action="/view">
+      <p>LPWA ID: <input type="text" name="lpwa_id" value="AA0008"></p>
+      <p>開始: <input type="text" name="start" value="-7d"></p>
+      <p>間隔: <input type="text" name="interval" value="1h"></p>
+      <p><input type="submit" value="データ表示"></p>
+      <input type="reset" value="取消">
+    </form>
+  </body>
+</html>
+  
