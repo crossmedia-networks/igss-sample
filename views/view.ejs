@@ -24,7 +24,7 @@
       var myChart = new Chart(ctx, {
     type: 'line',
     data: {
-	labels: my_label.map((x) => {return Date(x).toString()}),
+	labels: my_label.map((x) => {return new Date(x).toString()}),
 	datasets: [{
 	    label: '温度',
 	    data: [<%= value %>],
