@@ -17,10 +17,11 @@
 
     <script>
       var ctx = document.getElementById('mychart');
+      var my_label = [<%= label %>]
       var myChart = new Chart(ctx, {
     type: 'line',
     data: {
-	labels: [<%= label %>],
+	labels: my_label.map((x) => {return Date(x).toString()}),
 	datasets: [{
 	    label: '温度',
 	    data: [<%= value %>],
