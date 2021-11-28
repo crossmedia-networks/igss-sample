@@ -1,10 +1,9 @@
 const express = require('express')
 const path = require('path')
 const PORT = process.env.PORT || 5000
-const URL = process.env.URL
-//var http = require('http');
-var request = require('request');
+const URL = process.env.URL || "http://igss-api.ddns.net:3000"
 
+var request = require('request');
 
 app = express()
 
@@ -25,12 +24,17 @@ app.post('/view', function(req, res){
 	method: 'GET',
 	json: true
     }
+    //
     request(options, function (error, response, body) {
-	label = body.map((x) => {return Date.parse(x.time) })
-	value = body.map((x) => {return x.value})
-	res.render('view', {label: label, value: value })
+	const status = response.statusCode
+	if( status == 200 ){
+	    label = body.map((x) => {return Date.parse(x.time) })
+	    value = body.map((x) => {return x.value})
+	    res.render('view', {label: label, value: value })
+	} else {
+	    res.render('error')
+	}
     })
-
 })
 
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
