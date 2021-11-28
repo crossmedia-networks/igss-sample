@@ -6,9 +6,20 @@
     <h1>IGSS SAMPLE</h1>
     <h2>気象データ表示</h2>
     <form method="POST" action="/view">
-      <p>LPWA ID: <input type="text" name="lpwa_id" value="AA0008"></p>
-      <p>開始: <input type="text" name="start" value="-7d"></p>
+      <p>AREA: <input type="text" name="area" value="demo"></p>
+      <p>LPWA ID: <input type="text" name="lpwa_id" value=""></p>
+      <p>開始: <input type="text" name="start" value="-3d"></p>
       <p>間隔: <input type="text" name="interval" value="1h"></p>
+      <p>データ: <select name="sensor">
+	  <option value="dir">風向</option>
+	  <option value="hm">湿度</option>
+	  <option value="light">照度</option>
+	  <option value="pressure">気圧</option>
+	  <option value="rain">累加雨量</option>
+	  <option value="tmp">気温</option>
+	  <option value="uv">紫外線強度</option>
+	  <option value="wind">風速</option>
+	</select>
       <p><input type="submit" value="データ表示"></p>
       <input type="reset" value="取消">
     </form>

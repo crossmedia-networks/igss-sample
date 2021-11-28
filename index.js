@@ -21,7 +21,7 @@ app.get('/', (req, res) => res.render('index'))
 app.post('/view', function(req, res){
     // APIを呼び出す
     var options = {
-	url: `${URL}/sensor/demo/${req.body.lpwa_id}/tmp?start=${req.body.start}&interval=${req.body.interval}`,
+	url: `${URL}/sensor/${req.body.area}/${req.body.lpwa_id}/${req.body.sensor}?start=${req.body.start}&interval=${req.body.interval}`,
 	method: 'GET',
 	json: true
     }
